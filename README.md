@@ -6,10 +6,10 @@ Agent skills for integrating Solvapay SDK and onboarding providers.
 
 | Skill | Purpose |
 | --- | --- |
-| [solvapay](solvapay/) | Router skill that dispatches to the right specialist skill |
-| [integrate-solvapay-sdk](integrate-solvapay-sdk/) | Implement Solvapay SDK flows in Next.js, React, Express, and MCP server stacks |
-| [onboard-solvapay-provider](onboard-solvapay-provider/) | Onboard provider account, products/plans, sandbox testing, and go-live |
-| [integrate-website-checkout](integrate-website-checkout/) | Add hosted Solvapay checkout and customer portal to website apps |
+| [solvapay](skills/solvapay/) | Router skill that dispatches to the right specialist skill |
+| [integrate-solvapay-sdk](skills/integrate-solvapay-sdk/) | Implement Solvapay SDK flows in Next.js, React, Express, and MCP server stacks |
+| [onboard-solvapay-provider](skills/onboard-solvapay-provider/) | Onboard provider account, products/plans, sandbox testing, and go-live |
+| [integrate-website-checkout](skills/integrate-website-checkout/) | Add hosted Solvapay checkout and customer portal to website apps |
 
 ## Which Skill Should I Use?
 
@@ -70,7 +70,7 @@ A skill is considered complete when:
 
 ## Architecture
 
-- `solvapay/` routes requests by intent.
-- `integrate-solvapay-sdk/` is the primary implementation skill.
-- `onboard-solvapay-provider/` handles operational provider setup.
-- `integrate-website-checkout/` is the focused hosted checkout website path.
+- `skills/solvapay/` routes requests by intent.
+- `skills/integrate-solvapay-sdk/` is the primary implementation skill.
+- `skills/onboard-solvapay-provider/` handles operational provider setup.
+- `skills/integrate-website-checkout/` is the focused hosted checkout website path.

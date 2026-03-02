@@ -1,0 +1,17 @@
+{
+  "metadata": {
+    "pluginRoot": "."
+  },
+  "plugins": [
+    {
+      "name": "solvapay-skills",
+      "source": ".",
+      "skills": [
+        "./skills/solvapay",
+        "./skills/integrate-solvapay-sdk",
+        "./skills/onboard-solvapay-provider",
+        "./skills/integrate-website-checkout"
+      ]
+    }
+  ]
+}

@@ -4,6 +4,21 @@
 
 Use this file for concrete operation patterns and minimal payload shapes.
 
+## Contents
+
+- Package map
+- Common operations
+- Operation templates
+  - Create checkout session
+  - Create customer session
+  - Check limits
+  - Record usage
+  - Create/process payment intent (embedded only)
+- Minimal install
+- Required environment variables
+- Guardrails
+- Retrieval hints
+
 ## Package Map
 
 - `@solvapay/server`: server SDK, paywall handlers, webhook verification
