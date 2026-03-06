@@ -41,7 +41,7 @@ Use App Router patterns and `@solvapay/next` helpers.
 ## Guardrails
 
 - Prefer hosted checkout unless user explicitly needs embedded card UX.
-- Keep all Solvapay secret usage in route handlers only.
+- Keep all SolvaPay secret usage in route handlers only.
 - Always return clear 401/402 responses from protected API routes.
 
 ## Troubleshooting

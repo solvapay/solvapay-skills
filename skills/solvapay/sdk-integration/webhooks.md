@@ -1,6 +1,6 @@
 # Webhooks
 
-Use webhooks to keep local state in sync with Solvapay billing events.
+Use webhooks to keep local state in sync with SolvaPay billing events.
 
 ## Docs References (Topic-Based)
 
@@ -9,7 +9,7 @@ Use webhooks to keep local state in sync with Solvapay billing events.
 
 ## Required Steps
 
-1. Configure webhook endpoint in Solvapay dashboard.
+1. Configure webhook endpoint in SolvaPay Console.
 2. Read raw request body.
 3. Verify `x-solvapay-signature` with `SOLVAPAY_WEBHOOK_SECRET`.
 4. Process event idempotently.

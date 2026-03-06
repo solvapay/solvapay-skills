@@ -1,6 +1,6 @@
 # Next.js Hosted Checkout Guide
 
-Use this guide to add Solvapay hosted checkout and customer portal in App Router projects.
+Use this guide to add SolvaPay hosted checkout and customer portal in App Router projects.
 
 ## Docs References (Topic-Based)
 
@@ -37,4 +37,4 @@ Use this guide to add Solvapay hosted checkout and customer portal in App Router
 
 ## Note
 
-For advanced SDK patterns (usage metering, Express/MCP paths, webhook-heavy flows), use `integrate-solvapay-sdk`.
+For advanced SDK patterns (usage metering, Express/MCP paths, webhook-heavy flows), see [../../sdk-integration/guide.md](../../sdk-integration/guide.md).

@@ -9,7 +9,7 @@ Create provider account and complete payment account connection.
 
 ## Actions
 
-1. Sign up in Solvapay console.
+1. Sign up in SolvaPay Console.
 2. Open `Settings -> Payments` and connect Stripe.
 3. Complete Stripe verification requirements.
 4. Open `Settings -> Pages` and set brand basics (name, colors, logo).

@@ -1,6 +1,6 @@
 # Express SDK Guide
 
-Use Solvapay paywall wrappers around Express business handlers.
+Use SolvaPay paywall wrappers around Express business handlers.
 
 ## Docs References (Topic-Based)
 
@@ -9,7 +9,7 @@ Use Solvapay paywall wrappers around Express business handlers.
 
 ## Recommended Flow
 
-1. Initialize Solvapay server client.
+1. Initialize SolvaPay server client.
 2. Create `payable` handler with product/plan configuration.
 3. Wrap routes with `payable.http(...)`.
 4. Pass stable customer reference from auth/header.

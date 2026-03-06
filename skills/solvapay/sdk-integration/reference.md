@@ -144,12 +144,8 @@ npm install @solvapay/server@preview @solvapay/next@preview @solvapay/react@prev
 - Never put `SOLVAPAY_SECRET_KEY` in `NEXT_PUBLIC_*` or client bundles.
 - Always map your authenticated user ID to a stable customer reference.
 - Always verify webhook signatures before parsing business data.
-- Always keep pricing/product configuration in Solvapay backend, not hardcoded in UI.
+- Always keep pricing/product configuration in SolvaPay backend, not hardcoded in UI.
 
-## Retrieval Hints (Structure-Resilient)
+## Retrieval Hints
 
-When docs URLs change, resolve by topic via:
-
-1. SolvaPay Docs MCP search by topic
-2. `llms.txt` index lookup
-3. Direct docs fetch
+When docs URLs change, resolve by topic using the documentation sources defined in the root [SKILL.md](../SKILL.md#documentation-sources).

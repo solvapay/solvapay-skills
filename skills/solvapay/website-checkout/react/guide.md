@@ -1,6 +1,6 @@
 # React Website Checkout Guide
 
-React-only projects need a backend that owns Solvapay secret operations.
+React-only projects need a backend that owns SolvaPay secret operations.
 
 ## Docs References (Topic-Based)
 
@@ -34,7 +34,7 @@ React-only projects need a backend that owns Solvapay secret operations.
 
 ## Limitations
 
-- React-only client cannot securely call Solvapay secret endpoints directly.
+- React-only client cannot securely call SolvaPay secret endpoints directly.
 - Webhook handling remains backend responsibility.
 
-For full stack-specific implementation details, use `integrate-solvapay-sdk` and follow React + backend guides.
+For full stack-specific implementation details, see [../../sdk-integration/react/guide.md](../../sdk-integration/react/guide.md).

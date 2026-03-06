@@ -9,7 +9,7 @@ Use Supabase JWT auth so server routes can map requests to one customer identity
 
 ## Recommended Pattern
 
-- Use Solvapay Next auth middleware helper to extract user id for `/api/*`.
+- Use SolvaPay Next auth middleware helper to extract user id for `/api/*`.
 - Keep auth token handling server-side for all checkout/customer session routes.
 - Use `SolvaPayProvider` + Supabase adapter in client UI layer.
 

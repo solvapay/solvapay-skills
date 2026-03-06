@@ -1,17 +1,12 @@
----
-name: onboard-solvapay-provider
-description: Onboard a new Solvapay provider from account setup to production launch. Use when the user asks to create provider configuration, define products/plans, test in sandbox, and go live.
----
-
-# Onboard Solvapay Provider
+# Provider Onboarding Guide
 
 Guide provider setup with an operational, step-by-step flow.
 
 ## Purpose
 
-Use this skill for operational onboarding of a provider account, not application code implementation.
+Use this guide for operational onboarding of a provider account, not application code implementation.
 
-## Quick Start
+## Steps
 
 Follow these files in order:
 
@@ -20,17 +15,7 @@ Follow these files in order:
 3. [03-test-in-sandbox.md](03-test-in-sandbox.md)
 4. [04-go-live.md](04-go-live.md)
 
-## Documentation Sources
-
-Use this order:
-
-1. SolvaPay Docs MCP server: https://docs.solvapay.com/mcp
-2. Fallback index: https://docs.solvapay.com/llms.txt
-3. Direct docs pages
-
-If MCP is unavailable, suggest it as optional and continue.
-
-### Docs Discovery Hints
+## Docs Discovery Hints
 
 - Onboarding topics: `create account`, `create product`, `test in sandbox`, `go live`.
 - Runtime topics for coordination with engineering: `webhooks`, `checkout session`, `usage limits`.

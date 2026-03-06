@@ -9,7 +9,7 @@ Define the monetized surface area and pricing configuration.
 
 ## Actions
 
-1. Create a product in Solvapay console.
+1. Create a product in SolvaPay Console.
 2. Create at least one plan for that product.
 3. Confirm product and plan references used by integration code.
 4. Decide hosted checkout default vs embedded flow requirements.

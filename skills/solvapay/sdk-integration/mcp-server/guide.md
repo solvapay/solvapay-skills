@@ -65,7 +65,6 @@ Write business logic as plain functions. Wrap each one with `payable.mcp()`:
 
 ```typescript
 async function createTask(args: { title: string }) {
-  // Your business logic -- only runs if customer is within limits
   return { success: true, task: { id: crypto.randomUUID(), title: args.title } }
 }
 
@@ -116,7 +115,6 @@ const virtualTools = solvaPay.getVirtualTools({
   getCustomerRef,
 })
 
-// Merge tool definitions for tools/list
 const allTools = [
   ...virtualTools.map(t => ({
     name: t.name,
@@ -126,7 +124,6 @@ const allTools = [
   ...businessTools,
 ]
 
-// Merge handlers for tools/call
 const virtualToolHandlers = Object.fromEntries(
   virtualTools.map(t => [t.name, t.handler]),
 )

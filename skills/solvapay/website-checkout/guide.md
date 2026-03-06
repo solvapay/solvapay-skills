@@ -1,27 +1,19 @@
----
-name: integrate-website-checkout
-description: Add a hosted Solvapay checkout flow to a website app, primarily Next.js, with authentication and customer portal support. Use when the user asks to add website checkout, redirect users to Solvapay hosted pages, or gate premium features.
----
-
-# Integrate Website Checkout
+# Website Checkout Guide
 
 Implement hosted checkout for web apps with minimal PCI surface.
 
 ## Purpose
 
-Use this skill when the user wants hosted checkout + customer portal quickly in a website app.
+Use this guide when the user wants hosted checkout + customer portal quickly in a website app.
 
-## Documentation Sources
+## Stack Support
 
-Use this order:
+- **Next.js**: fully supported -> [nextjs/guide.md](nextjs/guide.md)
+- **React (no Next.js)**: partial guidance -> [react/guide.md](react/guide.md)
 
-1. SolvaPay Docs MCP server: https://docs.solvapay.com/mcp
-2. Fallback index: https://docs.solvapay.com/llms.txt
-3. Direct docs pages
+For advanced use cases (usage metering, Express/MCP paths, webhook-heavy flows), use [../sdk-integration/guide.md](../sdk-integration/guide.md).
 
-If MCP is unavailable, suggest it as optional and continue.
-
-### Docs Discovery Hints
+## Docs Discovery Hints
 
 - Topics: `checkout sessions`, `customer sessions`, `nextjs guide`, `react guide`, `webhooks`, `test in sandbox`.
 - Retrieval hint: resolve topics via MCP search first, then `llms.txt`.
@@ -31,15 +23,8 @@ If MCP is unavailable, suggest it as optional and continue.
 - Never build custom card forms when hosted checkout is acceptable.
 - Never expose `SOLVAPAY_SECRET_KEY` in client code.
 - Always keep checkout session creation on the server.
-- Always use Solvapay naming in user-facing text.
+- Always use SolvaPay naming in user-facing text.
 - Always verify access state from server truth after returning from checkout.
-
-## Stack Support
-
-- **Next.js**: fully supported -> [nextjs/guide.md](nextjs/guide.md)
-- **React (no Next.js)**: partial guidance -> [react/guide.md](react/guide.md)
-
-For API-heavy or non-website use cases, route to [../integrate-solvapay-sdk/SKILL.md](../integrate-solvapay-sdk/SKILL.md).
 
 ## Handoff Output
 

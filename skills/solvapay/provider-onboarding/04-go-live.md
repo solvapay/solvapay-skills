@@ -15,7 +15,7 @@ Switch account mode only after sandbox checks pass.
 
 ## Actions
 
-1. Switch account mode from sandbox to live in console header.
+1. Switch account mode from sandbox to live in SolvaPay Console header.
 2. Replace sandbox credentials with live credentials where applicable.
 3. Run one controlled live checkout test.
 4. Monitor first real transactions and webhook deliveries.

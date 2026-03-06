@@ -19,11 +19,11 @@ Choose the right approach based on what the skill needs to do:
 
 **Implementation / Guide skill** -- Teaches the agent something it doesn't know.
 - Bundled code examples, step-by-step guides, local reference files
-- Online docs with local fallback for Solvapay-specific APIs
+- Online docs with local fallback for SolvaPay-specific APIs
 - Progressive disclosure through sub-files
-- Best for: Solvapay SDK/API integration, custom workflows, niche tools
+- Best for: SolvaPay SDK/API integration, custom workflows, niche tools
 
-Most Solvapay skills will be implementation skills since the agent lacks training data about our APIs. A skill can combine both types -- implementation code for Solvapay parts, behavioral direction for well-known tools (Next.js, Supabase, Tailwind).
+Most SolvaPay skills will be implementation skills since the agent lacks training data about our APIs. A skill can combine both types -- implementation code for SolvaPay parts, behavioral direction for well-known tools (Next.js, Supabase, Tailwind).
 
 ## Directory Structure
 
@@ -65,6 +65,21 @@ If the skill includes utility scripts:
 - List required packages in SKILL.md
 - Make execution intent clear: "Run `analyze.py`" (execute) vs "See `analyze.py`" (read)
 - Include validation scripts for destructive or batch operations
+
+## Prefer Consolidated Skills
+
+When multiple related workflows exist (e.g. SDK integration, checkout, onboarding), consolidate into a single skill with domain directories rather than separate installable skills. A single skill with bundled resources ensures the agent always has full context and users cannot install a specialist without the shared routing and documentation chain.
+
+Pattern:
+```
+my-skill/
+├── SKILL.md              # Router/TOC with pushy description
+├── domain-a/guide.md     # Entry point for domain A
+├── domain-b/guide.md     # Entry point for domain B
+└── domain-c/guide.md     # Entry point for domain C
+```
+
+Only split into separate skills when domains are truly independent and have no shared context.
 
 ## Evaluation-Driven Development
 

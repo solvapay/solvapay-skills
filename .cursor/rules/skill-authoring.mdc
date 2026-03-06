@@ -17,9 +17,9 @@ The context window is shared with conversation history, other skills, and the sy
 
 ## Calibrate to Agent Knowledge
 
-The agent has deep training knowledge about popular tools (Stripe, React, Supabase) but knows little or nothing about Solvapay.
+The agent has deep training knowledge about popular tools (Stripe, React, Supabase) but knows little or nothing about SolvaPay.
 
-- **Solvapay APIs/SDKs**: Must be taught with implementation code and bundled references. The agent cannot infer our SDK patterns.
+- **SolvaPay APIs/SDKs**: Must be taught with implementation code and bundled references. The agent cannot infer our SDK patterns.
 - **Well-known tools** (e.g. Next.js, Tailwind): Give behavioral direction, not tutorials. Steer preferences rather than explain basics.
 - Before adding content, ask: "Does the agent already know this from training data?" If yes, provide only corrections and preferences, not explanations.
 

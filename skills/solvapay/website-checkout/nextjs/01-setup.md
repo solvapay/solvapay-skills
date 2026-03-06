@@ -14,7 +14,7 @@ npm install @solvapay/server@preview @solvapay/next@preview @solvapay/react@prev
 ## Environment Variables
 
 ```env
-SOLVAPAY_SECRET_KEY=sp_...
+SOLVAPAY_SECRET_KEY=sk_...
 SOLVAPAY_API_BASE_URL=https://api.solvapay.com
 NEXT_PUBLIC_PRODUCT_REF=prd_...
 NEXT_PUBLIC_SUPABASE_URL=https://your-project.supabase.co
@@ -24,7 +24,7 @@ SUPABASE_JWT_SECRET=...
 
 ## Purpose of Variables
 
-- `SOLVAPAY_SECRET_KEY`: server-only auth to Solvapay API
+- `SOLVAPAY_SECRET_KEY`: server-only auth to SolvaPay API
 - `SOLVAPAY_API_BASE_URL`: optional API host override
 - `NEXT_PUBLIC_PRODUCT_REF`: default product used for hosted checkout
 - Supabase vars: auth and token verification
@@ -34,7 +34,7 @@ SUPABASE_JWT_SECRET=...
 - [ ] App Router project is present
 - [ ] Server env vars exist
 - [ ] No secret values in `NEXT_PUBLIC_*`
-- [ ] Product reference exists in Solvapay dashboard
+- [ ] Product reference exists in SolvaPay Console
 
 ## Troubleshooting
 

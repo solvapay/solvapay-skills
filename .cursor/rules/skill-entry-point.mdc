@@ -29,9 +29,11 @@ description: What the skill does and when to use it. Use when...
 - Write in third person ("Processes Excel files", not "I can help you process")
 - Include BOTH what the skill does AND when to trigger it
 - Include specific keywords users might say (e.g. "checkout", "payment", "billing")
+- Make descriptions "pushy" to combat undertriggering -- models tend to not use skills when they'd be useful. Widen the trigger surface with related keywords and add "even if they don't explicitly mention X"
 
 Bad: `description: Helps with documents`
-Good: `description: Extract text and tables from PDF files, fill forms, merge documents. Use when working with PDF files or when the user mentions PDFs, forms, or document extraction.`
+Okay: `description: Extract text and tables from PDF files, fill forms, merge documents. Use when working with PDF files or when the user mentions PDFs, forms, or document extraction.`
+Better: `description: Extract text and tables from PDF files, fill forms, merge documents. Use when working with PDF files or when the user mentions PDFs, forms, document extraction, data extraction from scanned pages, or any file parsing task, even if they don't explicitly say 'PDF'.`
 
 ## Body Structure
 
@@ -49,7 +51,7 @@ Task Progress:
 
 ## Online Documentation References
 
-When a skill references external docs (Solvapay API docs, SDK docs), use the **online-first with local fallback** pattern:
+When a skill references external docs (SolvaPay API docs, SDK docs), use the **online-first with local fallback** pattern:
 
 1. Link to live docs first so the agent fetches the latest version
 2. Bundle a **Fallback Reference** section or file with essential API details for when docs are unreachable
@@ -71,5 +73,5 @@ For well-known third-party tools (Supabase, Tailwind), linking to their docs wit
 SKILL.md is a table of contents. It should overview and route, not contain everything.
 
 - Point to sub-files for detailed guides, reference docs, and examples
-- Keep references ONE level deep (SKILL.md -> reference.md, never reference.md -> details.md)
+- Minimize reference depth. For single-domain skills, keep one level deep (SKILL.md -> reference.md). For consolidated multi-domain skills, SKILL.md routes to domain entry files which route to domain-specific files -- two hops is acceptable, but avoid deeper chains.
 - Name files descriptively: `form_validation_rules.md`, not `doc2.md`

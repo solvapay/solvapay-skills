@@ -42,8 +42,8 @@ React client alone is not enough. The integration needs server endpoints that us
 
 ## Guardrails
 
-- Never call Solvapay secret endpoints directly from browser code.
-- Keep plan/product refs consistent with Solvapay dashboard configuration.
+- Never call SolvaPay secret endpoints directly from browser code.
+- Keep plan/product refs consistent with SolvaPay Console configuration.
 
 ## Troubleshooting
 

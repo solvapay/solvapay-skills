@@ -1,57 +1,41 @@
-# Solvapay Skills
+# SolvaPay Skills
 
-Agent skills for integrating Solvapay SDK and onboarding providers.
+Agent skill for integrating SolvaPay SDK, onboarding providers, and adding hosted checkout.
 
-## Available Skills
+## Skill
 
 | Skill | Purpose |
 | --- | --- |
-| [solvapay](skills/solvapay/) | Router skill that dispatches to the right specialist skill |
-| [integrate-solvapay-sdk](skills/integrate-solvapay-sdk/) | Implement Solvapay SDK flows in Next.js, React, Express, and MCP server stacks |
-| [onboard-solvapay-provider](skills/onboard-solvapay-provider/) | Onboard provider account, products/plans, sandbox testing, and go-live |
-| [integrate-website-checkout](skills/integrate-website-checkout/) | Add hosted Solvapay checkout and customer portal to website apps |
+| [solvapay](skills/solvapay/) | Routes by intent to SDK integration, website checkout, or provider onboarding |
 
-## Which Skill Should I Use?
+## What Can It Do?
 
-- "Protect my Express API with paywall checks" -> `integrate-solvapay-sdk` (`express` path)
-- "Set up provider account and launch billing" -> `onboard-solvapay-provider`
-- "Add hosted checkout to my Next.js site" -> `integrate-website-checkout`
-- "Not sure where to start" -> `solvapay` router skill
+- "Protect my Express API with paywall checks" -> SDK integration (Express path)
+- "Add hosted checkout to my Next.js site" -> website checkout (Next.js path)
+- "Set up my provider account and go live" -> provider onboarding
+- "Add usage metering to my MCP server" -> SDK integration (MCP server path)
+- "Not sure where to start" -> disambiguation and routing
 
 ## Documentation Source Priority
 
-All skills use the same retrieval chain:
+The skill uses this retrieval chain:
 
 1. SolvaPay Docs MCP server: https://docs.solvapay.com/mcp
 2. Fallback docs index: https://docs.solvapay.com/llms.txt
 3. Direct docs.solvapay.com page fetch
 
-If MCP is unavailable, skills continue with fallbacks. MCP setup is a recommended optional improvement.
+If MCP is unavailable, the skill continues with fallbacks. MCP setup is a recommended optional improvement.
 
 ## Installation
 
-Install specific skills (recommended) using the `skills` CLI:
-
 ```bash
-npx skills add https://github.com/solvapay/solvapay-skills --skill solvapay --skill integrate-solvapay-sdk --skill onboard-solvapay-provider --skill integrate-website-checkout
-```
-
-Install only one skill:
-
-```bash
-npx skills add https://github.com/solvapay/solvapay-skills --skill integrate-solvapay-sdk
-```
-
-Install all available skills:
-
-```bash
-npx skills add https://github.com/solvapay/solvapay-skills --all
+npx skills add https://github.com/solvapay/solvapay-skills --skill solvapay
 ```
 
 ## Local Development and Testing Workflow
 
-1. Edit a skill file in this repository.
-2. Install/update locally with `npx skills add <repo-or-path> --skill <skill-name>`.
+1. Edit skill files in this repository.
+2. Install/update locally with `npx skills add <repo-or-path> --skill solvapay`.
 3. Run 2-3 prompt checks:
    - routing intent prompt
    - happy-path implementation prompt
@@ -70,7 +54,21 @@ A skill is considered complete when:
 
 ## Architecture
 
-- `skills/solvapay/` routes requests by intent.
-- `skills/integrate-solvapay-sdk/` is the primary implementation skill.
-- `skills/onboard-solvapay-provider/` handles operational provider setup.
-- `skills/integrate-website-checkout/` is the focused hosted checkout website path.
+```
+solvapay/
+├── SKILL.md                     # Router and shared context
+├── AGENTS.md -> SKILL.md        # Claude Code compatibility
+├── metadata.json                # skills.sh leaderboard metadata
+├── sdk-integration/             # SDK paywall, checkout, usage, webhooks
+│   ├── guide.md                 # Entry point with stack detection
+│   ├── reference.md             # Package map and API operations
+│   ├── webhooks.md              # Signature verification and events
+│   └── {nextjs,react,express,mcp-server}/guide.md
+├── website-checkout/            # Hosted checkout for web apps
+│   ├── guide.md                 # Entry point with stack support
+│   ├── nextjs/{guide,01-setup,02-auth,03-checkout}.md
+│   └── react/guide.md
+└── provider-onboarding/         # Account setup through go-live
+    ├── guide.md                 # Entry point with step overview
+    └── {01-create-account,02-product-plan,03-sandbox,04-go-live}.md
+```
