@@ -10,23 +10,23 @@ Use App Router patterns and `@solvapay/next` helpers.
 ## Recommended Flow
 
 1. Add middleware/proxy auth extraction for `/api/*`.
-2. Create API routes for checkout session, customer session, subscription checks.
+2. Create API routes for checkout session, customer session, and access checks.
 3. Wrap app in `SolvaPayProvider` and connect auth adapter.
-4. Gate premium views based on subscription state.
+4. Gate premium views based on purchase/access state.
 5. Add webhook endpoint to synchronize purchase/payment events.
 
 ## Hosted vs Embedded Decision
 
 - Default to hosted checkout for faster integration and lower PCI burden.
 - Use embedded payment intents only when product requirements need custom payment UI.
-- If unclear, ask one question and default to hosted.
+- If unclear, ask one clarifying question and continue with hosted checkout unless the user explicitly needs embedded UI.
 
 ## Implementation Checklist
 
 - [ ] Auth middleware/proxy extracts stable user identity
 - [ ] `/api/create-checkout-session` implemented
 - [ ] `/api/create-customer-session` implemented
-- [ ] `/api/check-subscription` or equivalent implemented
+- [ ] `/api/check-access` or equivalent implemented
 - [ ] UI redirects to hosted checkout/customer URLs
 - [ ] Webhook route verifies signatures and updates local state
 

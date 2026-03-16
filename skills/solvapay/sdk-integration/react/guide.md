@@ -9,7 +9,7 @@ Use this when the project is React-first and backend routes exist separately.
 
 ## Recommended Flow
 
-1. Implement backend endpoints for checkout/subscription/customer operations.
+1. Implement backend endpoints for checkout/access/customer operations.
 2. Wrap app with `SolvaPayProvider`.
 3. Connect auth adapter (for example Supabase) to send bearer tokens.
 4. Use hooks/components for gating and upgrade UI.
@@ -22,14 +22,14 @@ React client alone is not enough. The integration needs server endpoints that us
 
 - `POST /api/create-checkout-session` -> `{ checkoutUrl }`
 - `POST /api/create-customer-session` -> `{ customerUrl }`
-- `GET /api/check-subscription` -> subscription/access payload for UI gating
+- `GET /api/check-access` -> purchase/access payload for UI gating
 - Optional: webhook endpoint to keep access state synchronized
 
 ## Frontend Integration Pattern
 
 - Initialize `SolvaPayProvider` at app root.
 - Ensure auth token is attached to backend API calls.
-- Use purchase/subscription hooks to gate premium UI.
+- Use purchase/access hooks to gate premium UI.
 - Trigger redirects using returned hosted URLs.
 
 ## Verification Checklist
@@ -47,6 +47,6 @@ React client alone is not enough. The integration needs server endpoints that us
 
 ## Troubleshooting
 
-- Purchase state never changes -> backend check-subscription route missing or stale.
+- Purchase state never changes -> backend check-access route missing or stale.
 - CORS/auth errors -> backend route not accepting token/session strategy.
 - UI shows unlocked while API denies -> local state out of sync; re-fetch from backend truth.

@@ -10,16 +10,16 @@ Define the monetized surface area and pricing configuration.
 ## Actions
 
 1. Create a product in SolvaPay Console.
-2. Create at least one plan for that product.
+2. Add at least one plan within that product.
 3. Confirm product and plan references used by integration code.
-4. Decide hosted checkout default vs embedded flow requirements.
+4. Choose integration path: Hosted MCP Pay (no-code) or SDK Integration.
 5. Document entitlement behavior for each plan (what unlocks, limits, period).
 
 ## Acceptance Criteria
 
 - [ ] Product exists and is active
 - [ ] Plan is attached to product
-- [ ] Integration references match dashboard references exactly
+- [ ] Integration references match SolvaPay Console references exactly
 - [ ] Billing interval and limits match intended pricing model
 - [ ] Entitlement rules are documented for engineering and support
 

@@ -24,7 +24,7 @@ Add paywall protection and self-service tools to an MCP server using `@solvapay/
 ## Prerequisites
 
 - `@solvapay/server` installed in the project
-- A product created in the SolvaPay dashboard with at least one plan
+- A product created in SolvaPay Console with at least one plan
 - `SOLVAPAY_SECRET_KEY` and `SOLVAPAY_PRODUCT_REF` set in the environment
 
 ## SDK initialization

@@ -4,7 +4,8 @@ Implement hosted checkout for web apps with minimal PCI surface.
 
 ## Purpose
 
-Use this guide when the user wants hosted checkout + customer portal quickly in a website app.
+Use this guide when the user wants hosted checkout + customer portal quickly in a web app.
+This guide is for web checkout flows, not Hosted MCP Pay configuration.
 
 ## Stack Support
 
@@ -31,7 +32,7 @@ For advanced use cases (usage metering, Express/MCP paths, webhook-heavy flows),
 When complete, provide:
 
 - framework and auth model used
-- implemented routes for checkout/customer session/subscription check
+- implemented routes for checkout/customer session/access check
 - return URL behavior and post-checkout refresh path
 - sandbox validation outcome (success + failure case)
 
@@ -40,5 +41,5 @@ When complete, provide:
 - [ ] Confirm framework and auth strategy
 - [ ] Implement server checkout session route
 - [ ] Implement customer portal session route
-- [ ] Gate premium views with subscription state
+- [ ] Gate premium views with purchase/access state
 - [ ] Validate end-to-end hosted checkout in sandbox

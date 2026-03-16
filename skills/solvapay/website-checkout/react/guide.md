@@ -17,7 +17,7 @@ React-only projects need a backend that owns SolvaPay secret operations.
 
 - `POST /api/create-checkout-session` -> `{ checkoutUrl }`
 - `POST /api/create-customer-session` -> `{ customerUrl }`
-- `GET /api/check-subscription` -> current access state
+- `GET /api/check-access` (or equivalent) -> current access state
 
 ## Frontend Responsibilities
 

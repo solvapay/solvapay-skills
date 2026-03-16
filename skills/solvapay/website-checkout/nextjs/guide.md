@@ -19,20 +19,20 @@ Use this guide to add SolvaPay hosted checkout and customer portal in App Router
 - API route to create checkout session URL
 - API route to create customer portal URL
 - Frontend redirects to hosted pages
-- Subscription-aware UI states
+- Purchase/access-aware UI states
 
 ## Verification Flow
 
 1. Unauthenticated user is blocked from checkout endpoints.
 2. Authenticated user receives checkout URL.
 3. User returns from hosted checkout.
-4. App refreshes subscription state and unlocks features.
+4. App refreshes purchase/access state and unlocks features.
 5. Customer portal redirect works.
 
 ## Troubleshooting
 
 - Route returns 500 -> missing server env or product/customer mapping.
-- Return to app but still locked -> no subscription refresh or stale backend state.
+- Return to app but still locked -> no purchase/access refresh or stale backend state.
 - Portal URL missing -> customer session route payload invalid.
 
 ## Note

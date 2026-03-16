@@ -35,10 +35,11 @@ Ask one question if any of these are missing:
 ## Implementation Order
 
 1. Install SDK packages and configure env vars.
-2. Implement customer identity mapping from your auth layer.
-3. Add paywall/checkout flow.
-4. Add webhook handling for source-of-truth updates.
-5. Validate in sandbox before go-live.
+2. Confirm product exists with required plans in SolvaPay Console.
+3. Implement customer identity mapping from your auth layer.
+4. Add paywall/checkout flow.
+5. Add webhook handling for source-of-truth updates.
+6. Validate in sandbox before go-live.
 
 ## Stage 1: Setup
 
@@ -99,7 +100,7 @@ Ask one question if any of these are missing:
 - **Next.js**: [nextjs/guide.md](nextjs/guide.md)
 - **React**: [react/guide.md](react/guide.md)
 - **Express**: [express/guide.md](express/guide.md)
-- **MCP server**: [mcp-server/guide.md](mcp-server/guide.md)
+- **MCP Server**: [mcp-server/guide.md](mcp-server/guide.md)
 
 ## Shared References
 

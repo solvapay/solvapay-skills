@@ -5,6 +5,7 @@ Guide provider setup with an operational, step-by-step flow.
 ## Purpose
 
 Use this guide for operational onboarding of a provider account, not application code implementation.
+Use product-first setup in SolvaPay Console where plans are configured within each product.
 
 ## Steps
 
@@ -22,7 +23,7 @@ Follow these files in order:
 
 ## Guardrails
 
-- Never skip sandbox validation before go-live.
+- Never skip sandbox validation before switching to live mode.
 - Never launch with missing webhook verification or unresolved failed-payment handling.
 - Always confirm product and plan references before sharing integration instructions.
 - Always capture handoff outputs for engineering teams before closing onboarding.

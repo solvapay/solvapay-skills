@@ -4,7 +4,7 @@ Create server routes that return hosted URLs, then redirect on the client.
 
 ## Docs References (Topic-Based)
 
-- Topics: `checkout sessions`, `customer sessions`, `check subscription`, `return URL`.
+- Topics: `checkout sessions`, `customer sessions`, `check access`, `return URL`.
 - Retrieval hint: resolve API topics via MCP first; fallback to `llms.txt`.
 
 ## API Routes
@@ -33,7 +33,7 @@ export async function POST(request: NextRequest) {
 
 1. Call checkout route from authenticated client.
 2. Redirect user to returned `checkoutUrl`.
-3. On return to app, re-check subscription and unlock premium features.
+3. On return to app, re-check purchase/access state and unlock premium features.
 4. Provide "Manage billing" action using `customerUrl`.
 
 ### Redirect Pattern
@@ -50,7 +50,7 @@ window.location.href = checkoutUrl
 
 ## Post-Checkout Refresh
 
-- On return route/page load, call subscription check endpoint and refresh UI state.
+- On return route/page load, call the access check endpoint and refresh UI state.
 - Keep server-side access checks authoritative for premium routes.
 
 ## Verify
@@ -63,5 +63,5 @@ window.location.href = checkoutUrl
 ## Troubleshooting
 
 - Redirect URL missing -> server route not returning expected shape.
-- Returned from checkout but still no access -> no subscription refresh or failed webhook sync.
+- Returned from checkout but still no access -> no access refresh or failed webhook sync.
 - Portal opens wrong account -> customer reference mismatch.

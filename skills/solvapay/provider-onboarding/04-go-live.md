@@ -4,7 +4,7 @@ Switch account mode only after sandbox checks pass.
 
 ## Docs References (Topic-Based)
 
-- Topics: `go live`, `mode switch`, `webhook monitoring`, `failed payments`.
+- Topics: `go live`, `mode switch`, `webhook monitoring`, `failed payments`, `live mode`.
 - Retrieval hint: resolve onboarding topics via MCP first, fallback to `llms.txt`.
 
 ## Required Preconditions
@@ -25,7 +25,7 @@ Switch account mode only after sandbox checks pass.
 - [ ] Live mode is active
 - [ ] Real payment succeeds for a test user
 - [ ] Webhooks are received and verified
-- [ ] Dashboard shows expected live usage/revenue events
+- [ ] SolvaPay Console shows expected live usage/revenue events
 - [ ] On-call owner is assigned for first 24-48 hours
 
 ## Post-Launch

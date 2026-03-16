@@ -2,7 +2,7 @@
 
 ## Purpose
 
-Use this file for concrete operation patterns and minimal payload shapes.
+Use this file for TypeScript SDK operation patterns and minimal payload shapes.
 
 ## Contents
 
@@ -22,7 +22,7 @@ Use this file for concrete operation patterns and minimal payload shapes.
 ## Package Map
 
 - `@solvapay/server`: server SDK, paywall handlers, webhook verification
-- `@solvapay/next`: Next.js helpers for checkout/customer/subscription routes
+- `@solvapay/next`: Next.js helpers for checkout/customer/access routes
 - `@solvapay/react`: UI provider/hooks for purchase and plan state
 - `@solvapay/react-supabase`: Supabase auth adapter for `@solvapay/react`
 - `@solvapay/auth`: auth utilities and adapters
@@ -87,7 +87,7 @@ Response shape:
 
 Docs topic hint: `customer session create`.
 
-### Check Limits
+### Check Access and Limits
 
 Use before expensive or paid operations to enforce monetization.
 

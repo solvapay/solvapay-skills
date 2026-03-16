@@ -17,7 +17,7 @@ Use Supabase JWT auth so server routes can map requests to one customer identity
 
 - Middleware should set a stable user identifier for downstream API handlers.
 - Customer sync should run before first checkout for new users.
-- Keep `/api/check-subscription` available for UI refresh after checkout return.
+- Keep an access check route (for example `/api/check-access`) available for UI refresh after checkout return.
 
 ## Verify
 
