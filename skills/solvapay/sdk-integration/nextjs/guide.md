@@ -2,6 +2,16 @@
 
 Use App Router patterns and `@solvapay/next` helpers.
 
+## Prerequisites
+
+- Run `npx solvapay init` to authenticate, write `SOLVAPAY_SECRET_KEY` to
+  `.env`, and install base SDK packages.
+- Install additional packages for this flow:
+
+```bash
+npm install @solvapay/next @solvapay/react @solvapay/react-supabase
+```
+
 ## Docs References (Topic-Based)
 
 - Topics: `nextjs guide`, `webhooks`, `testing`, `error handling`, `checkout sessions`, `customer sessions`.

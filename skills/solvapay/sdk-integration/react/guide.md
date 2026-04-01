@@ -2,6 +2,16 @@
 
 Use this when the project is React-first and backend routes exist separately.
 
+## Prerequisites
+
+- Run `npx solvapay init` to authenticate, write `SOLVAPAY_SECRET_KEY` to
+  `.env`, and install base SDK packages.
+- Install additional packages for this flow:
+
+```bash
+npm install @solvapay/react
+```
+
 ## Docs References (Topic-Based)
 
 - Topics: `react guide`, `auth adapter`, `checkout sessions`, `customer sessions`, `limits`, `webhooks`.

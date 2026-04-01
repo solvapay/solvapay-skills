@@ -27,7 +27,9 @@ managed proxy (no paywall code in your server), use [MCP Pay guide](../../mcp-pa
 
 ## Prerequisites
 
-- `@solvapay/server` installed in the project
+- Run `npx solvapay init` to authenticate, write `SOLVAPAY_SECRET_KEY` to
+  `.env`, and install base SDK packages.
+- Base packages from init are sufficient for this flow.
 - A product created in SolvaPay Console with at least one plan
 - `SOLVAPAY_SECRET_KEY` and `SOLVAPAY_PRODUCT_REF` set in the environment
 
