@@ -29,7 +29,7 @@ If MCP is unavailable, the skill continues with fallbacks. MCP setup is a recomm
 ## Installation
 
 ```bash
-npx skills add https://github.com/solvapay/solvapay-skills --skill solvapay
+npx skills add solvapay/skills
 ```
 
 ## Local Development and Testing Workflow
