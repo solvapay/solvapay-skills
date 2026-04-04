@@ -52,11 +52,8 @@ Request shape:
 {
   "name": "Docs Assistant",
   "originUrl": "https://origin.example.com/mcp",
-  "freePlan": {
-    "name": "Free",
-    "freeUnits": 0
-  },
-  "paidPlans": [
+  "plans": [
+    { "key": "free", "name": "Free", "price": 0, "freeUnits": 0, "currency": "USD" },
     { "key": "pro", "name": "Pro", "price": 2000, "currency": "USD", "billingCycle": "monthly" }
   ],
   "tools": [
@@ -85,12 +82,12 @@ Docs topic hint: `mcp pay bootstrap`, `create hosted mcp pay product`.
 
 Use after bootstrap to evolve pricing and tool mapping without recreating the product.
 
-Request shape (add or replace paid plans):
+Request shape (replace all plans):
 
 ```json
 {
-  "freePlan": { "name": "Free", "freeUnits": 100 },
-  "paidPlans": [
+  "plans": [
+    { "key": "free", "name": "Free", "price": 0, "freeUnits": 100, "currency": "USD" },
     { "key": "pro", "name": "Pro", "price": 2000, "currency": "USD", "billingCycle": "monthly" }
   ],
   "toolMapping": [
@@ -104,16 +101,16 @@ Request shape (revert to free-only):
 
 ```json
 {
-  "freePlan": { "name": "Free", "freeUnits": 0 },
-  "paidPlans": []
+  "plans": [
+    { "key": "free", "name": "Free", "price": 0, "freeUnits": 0, "currency": "USD" }
+  ]
 }
 ```
 
-Request shape (remap only, keep plans unchanged):
+Request shape (remap tools only):
 
 ```json
 {
-  "freePlan": { "name": "Free", "freeUnits": 1000 },
   "toolMapping": [
     { "name": "deep_research", "planKeys": ["pro"] }
   ]
