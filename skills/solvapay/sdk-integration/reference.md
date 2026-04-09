@@ -53,8 +53,8 @@ Request shape:
   "name": "Docs Assistant",
   "originUrl": "https://origin.example.com/mcp",
   "plans": [
-    { "key": "free", "name": "Free", "price": 0, "freeUnits": 0, "currency": "USD" },
-    { "key": "pro", "name": "Pro", "price": 2000, "currency": "USD", "billingCycle": "monthly" }
+    { "key": "free", "name": "Free", "price": 0, "freeUnits": 0 },
+    { "key": "pro", "name": "Pro", "price": 2000, "billingCycle": "monthly" }
   ],
   "tools": [
     { "name": "list_docs", "planKeys": ["free", "pro"] },
@@ -87,8 +87,8 @@ Request shape (replace all plans):
 ```json
 {
   "plans": [
-    { "key": "free", "name": "Free", "price": 0, "freeUnits": 100, "currency": "USD" },
-    { "key": "pro", "name": "Pro", "price": 2000, "currency": "USD", "billingCycle": "monthly" }
+    { "key": "free", "name": "Free", "price": 0, "freeUnits": 100 },
+    { "key": "pro", "name": "Pro", "price": 2000, "billingCycle": "monthly" }
   ],
   "toolMapping": [
     { "name": "deep_research", "planKeys": ["pro"] },
@@ -102,7 +102,7 @@ Request shape (revert to free-only):
 ```json
 {
   "plans": [
-    { "key": "free", "name": "Free", "price": 0, "freeUnits": 0, "currency": "USD" }
+    { "key": "free", "name": "Free", "price": 0, "freeUnits": 0 }
   ]
 }
 ```

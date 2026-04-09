@@ -60,7 +60,7 @@ const bootstrap = await solvaPay.bootstrapMcpProduct({
   name: 'Docs Assistant',
   originUrl: 'https://origin.example.com/mcp',
   plans: [
-    { key: 'free', name: 'Free', price: 0, freeUnits: 0, currency: 'USD' },
+    { key: 'free', name: 'Free', price: 0, freeUnits: 0 },
   ],
 })
 ```
@@ -74,8 +74,8 @@ const bootstrap = await solvaPay.bootstrapMcpProduct({
   name: 'Docs Assistant',
   originUrl: 'https://origin.example.com/mcp',
   plans: [
-    { key: 'free', name: 'Free', price: 0, freeUnits: 100, currency: 'USD' },
-    { key: 'pro', name: 'Pro', price: 2000, currency: 'USD', billingCycle: 'monthly' },
+    { key: 'free', name: 'Free', price: 0, freeUnits: 100 },
+    { key: 'pro', name: 'Pro', price: 2000, billingCycle: 'monthly' },
   ],
   tools: [
     { name: 'list_docs', planKeys: ['free', 'pro'] },
@@ -101,9 +101,9 @@ product.
 ```typescript
 await solvaPay.configureMcpPlans(productRef, {
   plans: [
-    { key: 'free', name: 'Free', price: 0, freeUnits: 100, currency: 'USD' },
-    { key: 'pro', name: 'Pro', price: 2000, currency: 'USD', billingCycle: 'monthly' },
-    { key: 'team', name: 'Team', price: 6000, currency: 'USD', billingCycle: 'monthly' },
+    { key: 'free', name: 'Free', price: 0, freeUnits: 100 },
+    { key: 'pro', name: 'Pro', price: 2000, billingCycle: 'monthly' },
+    { key: 'team', name: 'Team', price: 6000, billingCycle: 'monthly' },
   ],
   toolMapping: [
     { name: 'list_docs', planKeys: ['free', 'pro', 'team'] },
@@ -117,7 +117,7 @@ await solvaPay.configureMcpPlans(productRef, {
 ```typescript
 await solvaPay.configureMcpPlans(productRef, {
   plans: [
-    { key: 'free', name: 'Free', price: 0, freeUnits: 0, currency: 'USD' },
+    { key: 'free', name: 'Free', price: 0, freeUnits: 0 },
   ],
 })
 ```
