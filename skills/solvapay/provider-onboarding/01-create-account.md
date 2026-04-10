@@ -22,8 +22,8 @@ Create provider account and complete the initial onboarding form.
 
 ## Notes
 
-- New accounts start in sandbox by default.
-- Stripe setup is completed later from dashboard after first product creation.
+- New accounts start in sandbox with a test Stripe account auto-provisioned.
+- Stripe setup for real payments happens during the Go-Live flow, not during onboarding.
 - Keep team-level ownership access documented before go-live.
 
 ## Failure Remediation
