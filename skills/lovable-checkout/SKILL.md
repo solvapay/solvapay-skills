@@ -43,10 +43,9 @@ Explicit Never / Always for the Lovable agent to internalise before writing code
 - **Never** hand-roll `fetch` against `https://api-dev.solvapay.com` from the
   browser. All SolvaPay backend calls go through Supabase edge functions.
 - **Always** install with the `@preview` tag:
-  `@solvapay/react@preview`, `@solvapay/react-supabase@preview`. If Lovable's
-  starter pinned `@solvapay/react@1.0.9-preview.1`, replace it with `"preview"`
-  — that early build shipped without `CheckoutLayout` and is deprecated (`npm
-  install` will warn).
+  `@solvapay/react@preview`, `@solvapay/react-supabase@preview`. Never pin an
+  exact preview version — the floating tag tracks the current build and is
+  what every snippet in this skill targets.
 - **Always** set `SOLVAPAY_API_BASE_URL=https://api-dev.solvapay.com` as a
   Supabase secret. Production rejects sandbox keys.
 - **Always** use `createSupabaseAuthAdapter` from `@solvapay/react-supabase`.
@@ -91,10 +90,9 @@ No custom Node server. Each SolvaPay API route is a one-line Deno handler from
 npm install @solvapay/react@preview @solvapay/react-supabase@preview
 ```
 
-If the Lovable starter already has `@solvapay/react` pinned to
-`1.0.9-preview.1`, edit `package.json` and replace both SolvaPay version strings
-with `"preview"`, then run `npm install` again. The old pin will emit a
-deprecation warning; that's expected and confirms the fix.
+If `package.json` already has either package pinned to an exact preview version,
+replace both version strings with `"preview"` and run `npm install` again so
+the next build tracks the current preview tag.
 
 ## Step 2 — Create the Supabase edge functions
 
@@ -316,7 +314,7 @@ enough; the layout component is the happy path.
 
 | Symptom | Cause | Fix |
 | --- | --- | --- |
-| `CheckoutLayout` missing from `@solvapay/react` exports + npm prints a deprecation warning | Pinned to the orphaned `1.0.9-preview.1` | Replace version with `"preview"` in `package.json`, `npm install` again |
+| `CheckoutLayout` missing from `@solvapay/react` exports | Pinned to an old exact preview version | Replace the version with `"preview"` in `package.json`, `npm install` again |
 | `/list-plans` returns `[]` | `SOLVAPAY_PRODUCT_REF` secret missing | `supabase secrets set SOLVAPAY_PRODUCT_REF=prd_...` and `supabase functions deploy` |
 | 402 with no checkout URL | Hitting prod with sandbox key | Set `SOLVAPAY_API_BASE_URL=https://api-dev.solvapay.com` as a Supabase secret, redeploy |
 | CORS / 500 from `/functions/v1/*` | Secrets changed but functions not redeployed | Rerun `supabase functions deploy` (CORS is permissive by default in the wrappers) |
